@@ -1,0 +1,33 @@
+<div class="container mt-4">
+  <table class="table table-dark table-hover table-bordered">
+    <thead>
+      <th>Equipo</th>
+      <th>Jugados</th>
+      <th>Goles a Favor</th>
+      <th>Goles en Contra</th>
+      <th>Diferencia de Goles</th>
+      <th>Ganados</th>
+      <th>Empatados</th>
+      <th>Perdidos</th>
+      <th>Total</th>
+    </thead>
+    <tbody>
+      <tr *ngFor='let t of table'>
+        <div *ngIf="t.teamid == idTeam; else sinoBloque">
+            <td><strong>{{t.name}}</strong></td>
+        </div>
+        <ng-template #sinoBloque>
+            <td>{{t.name}}</td>
+        </ng-template>
+        <td>{{t.played }}</td>
+        <td>{{t.goalsfor }}</td>
+        <td>{{t.goalsagainst }}</td>
+        <td>{{t.goalsdifference }}</td>
+        <td>{{t.win }}</td>
+        <td>{{t.draw }}</td>
+        <td>{{t.loss }}</td>
+        <td>{{t.total  }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,13 @@
+<div class="row">
+  <div *ngFor='let equipo of equipos'>
+    <div class="col-6">
+      <div class=" mt-2 mb-2 ml-2 mr-2 p2" style="width: 10.5rem;">
+        <a [routerLink]="['/equipo', equipo.idTeam]">
+          <img [src]="equipo.strTeamBadge" class="mt-3" alt="Escudo Del Equipo" style="width: 10.5rem;">
+        </a>
+        <h5 class="text-center">{{ equipo.strTeam }}</h5>
+        <button class="btn btn-primary btn-block" (click)="GuardarEquipoFav(equipo.idTeam)"> + Favoritos </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+  <div class="jumbotron jumbotron-fluid">
+      <div *ngFor='let pa of partidos'>
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+                <img [src]="pa.strThumb" class="img-fluid">
+                <p class="display-4 text-center">Local : {{pa.intHomeScore}} - Visitante : {{pa.intHomeScore}}</p>
+            </div>
+            <div class="col-6">
+                <div class="card" style="width: 25rem;">
+                  <div class="card-body">
+                      <p> <strong> Tarjetas Amarrillas Local </strong>: {{pa.strHomeYellowCards}}</p>
+                      <p> <strong> Tarjetas Amarrillas Visitante</strong> : {{pa.strAwayYellowCards}}</p>
+                      <hr class="my-4">
+                      <p> <strong> Sustituciones Local </strong>: {{pa.strHomeLineupSubstitutes}}</p>
+                      <p> <strong> Sustituciones Visitante </strong>: {{pa.strAwayLineupSubstitutes}}</p>
+                  </div>
+                  </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col  mt-2">
+                <ul class="list-group list-group-flush bg-dark">
+                    <li class="list-group-item text-center list-group-item-primary"><strong>Formacion del Local</strong></li>
+                    <li class="list-group-item text-center list-group-item-warning">{{pa.strHomeLineupGoalkeeper}}</li>
+                    <li class="list-group-item text-center list-group-item-secondary">{{pa.strHomeLineupDefense}}</li>
+                    <li class="list-group-item text-center list-group-item-success">{{pa.strHomeLineupMidfield}}</li>
+                    <li class="list-group-item text-center list-group-item-danger">{{pa.strHomeLineupForward}}</li>
+                </ul>
+            </div>
+            <div class="col  mt-2">
+              <ul class="list-group list-group-flush bg-dark">
+                <li class="list-group-item text-center list-group-item-primary"><strong>Formacion del Visitante</strong></li>
+                <li class="list-group-item text-center list-group-item-warning">{{pa.strAwayLineupGoalkeeper}}</li>
+                <li class="list-group-item text-center list-group-item-secondary">{{pa.strAwayLineupDefense}}</li>
+                <li class="list-group-item text-center list-group-item-success">{{pa.strAwayLineupMidfield}}</li>
+                <li class="list-group-item text-center list-group-item-danger">{{pa.strAwayLineupForward}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,14 @@
+  <div class="row">
+      <div *ngFor="let pe of partidosEquipo" style="margin : 0 auto;">
+        <div class="col">
+          <div class="card mt-2 mb-2" style="width: 25rem;">
+              <div *ngIf="pe.strThumb != null; else elseBlock">
+                  <img [src]="pe.strThumb" class="card-img-top img-fluid" [routerLink]="['/partido', pe.idEvent]">
+              </div>
+              <ng-template #elseBlock>
+                  <h3 class="text-center">{{pe.strEvent}}</h3>
+              </ng-template>
+          </div>
+        </div>
+      </div>
+  </div>
